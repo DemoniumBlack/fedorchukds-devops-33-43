@@ -4,29 +4,26 @@ metadata:
   name: nginx-only
   namespace: config-test
   labels:
-    app: nginx
+    app: nginx-frontend
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
-  replicas: 1
+      app: nginx-frontend
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-frontend
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: nginx:1.25.4
         ports:
         - containerPort: 80
-          name: http
-        - containerPort: 443
-          name: https
         volumeMounts:
-          - name: nginx-index-file
-            mountPath: /usr/share/nginx/html/
+        - name: nginx-mount
+          mountPath: /usr/share/nginx/html
       volumes:
-      - name: nginx-index-file
+      - name: nginx-mount
         configMap:
           name: nginx-maps

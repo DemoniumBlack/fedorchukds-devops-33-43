@@ -5,8 +5,9 @@ metadata:
   namespace: config-test
 data:
   index.html: |
+    <!DOCTYPE html>
     <html>
-    <h1>Welcome</h1>
-    </br>
-    <h1>Hi! We are successfully change previous web page </h1>
+    <body>
+    <h1>Hi this is Testing HTML</h1>
+    </body>
     </html>
