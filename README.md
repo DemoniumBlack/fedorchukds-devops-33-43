@@ -70,11 +70,28 @@
 
 ![img_5](IMG/img_5.png)
 
+Файлы сертификатов конвертирую в формат base64 и размещаю в манифесте Secret.
+
 Проверю, действительно ли создан секрет:
 
 ![img_6](IMG/img_6.png)
 
 Секрет создан.
 
-4. Создаю Ingress и необходимый Service, подключаю к нему SSL. Продемонстрировать доступ к приложению по HTTPS. 
-4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+4. Создаю Ingress и необходимый Service, подключаю к нему SSL. Проверю доступ к сайту по HTTPS:
+
+![img_7](IMG/img_7.png)
+
+Сайт открывается, текст страницы взят из ConfigMap. Сертификат сайта подключен:
+
+![img_8](IMG/img_8.png)
+
+5. Ссылка на манифест Deployment - https://github.com/DemoniumBlack/fedorchukds-devops-33-43/blob/main/SRC/nginx_deployment.yaml
+
+   Ссылка на манифест ConfigMap - https://github.com/DemoniumBlack/fedorchukds-devops-33-43/blob/main/SRC/nginx_configmap.yaml
+
+   Ссылка на манифест Service - https://github.com/DemoniumBlack/fedorchukds-devops-33-43/blob/main/SRC/nginx_service.yaml
+
+   Ссылка на манифест Secret - https://github.com/DemoniumBlack/fedorchukds-devops-33-43/blob/main/SRC/nginx_secret.yaml
+
+   Ссылка на манифест Ingress - https://github.com/DemoniumBlack/fedorchukds-devops-33-43/blob/main/SRC/nginx_ingress.yaml
